@@ -16,37 +16,43 @@
       <div class="form-floating mb-3 mt-4">
         <input
           type="text"
-          class="form-control "
+          class="form-control"
           id="productName"
           placeholder="ProductName"
           oninput="validateName()"
         />
         <label for="productName">Product Name</label>
-        <small class="text-danger d-none" id="nameError">Name must be start with capital letter</small>
+        <small class="text-danger d-none" id="nameError"
+          >Name must be start with capital letter</small
+        >
       </div>
       <div class="form-floating mb-3 mt-4">
         <input
           type="number"
-          class="form-control "
+          class="form-control"
           id="productPrice"
           placeholder="productPrice"
           oninput="validateprice()"
         />
         <label for="productPrice">Product Price</label>
-        <small class="text-danger d-none" id="priceError">price must be From 1000 To 10000</small>
+        <small class="text-danger d-none" id="priceError"
+          >price must be From 1000 To 10000</small
+        >
       </div>
 
       <div class="form-floating mb-3 mt-4">
         <input
           type="text"
-          class="form-control "
+          class="form-control"
           id="productCategory"
           placeholder="productCategory"
           oninput="validateCategory()"
           list="categories"
         />
         <label for="productCategory">Product Category</label>
-        <small class="text-danger d-none" id="CategoryError">Category must be Tv OR Mobile OR Laptop OR Electronics</small>
+        <small class="text-danger d-none" id="CategoryError"
+          >Category must be Tv OR Mobile OR Laptop OR Electronics</small
+        >
         <datalist id="categories">
           <option value="mobile"></option>
           <option value="tv"></option>
@@ -56,31 +62,41 @@
       </div>
       <div class="form-floating mb-3 mt-4">
         <textarea
-          class="form-control "
+          class="form-control"
           id="productDescription"
           placeholder="productDescription"
           oninput="validateDescription()"
         ></textarea>
         <label for="productDescription">Product Description</label>
-        <small class="text-danger d-none" id="DescriptionError">Description must be at least 50 char</small>
+        <small class="text-danger d-none" id="DescriptionError"
+          >Description must be at least 50 char</small
+        >
       </div>
       <div class="form-floating mb-3 mt-4">
         <input
           type="file"
           accept="image/*"
-          class="form-control "
+          class="form-control"
           id="productImage"
           placeholder="productImage"
-          required = 'required'
+          required="required"
         />
         <label for="productImage">Product Image</label>
       </div>
 
-      <button class="btn btn-outline-primary" onclick="addProduct()" id="addBtn">
+      <button
+        class="btn btn-outline-success"
+        onclick="addProduct()"
+        id="addBtn"
+      >
         ADD PRODUCT
       </button>
 
-      <button class="btn btn-outline-warning d-none" id="updateBtn" onclick="updateProduct()" >
+      <button
+        class="btn btn-outline-warning d-none"
+        id="updateBtn"
+        onclick="updateProduct()"
+      >
         UPDATE PRODUCT
       </button>
       <div class="my-3">
@@ -91,7 +107,7 @@
           oninput="searchProduct()"
           placeholder="Search ..."
           id="search"
-          class="form-control  py-3"
+          class="form-control py-3"
         />
       </div>
 
