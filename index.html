@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div class="w-75 mx-auto shadow bg-light p-4">
+      <h2>Product Management System</h2>
+
+      <div class="form-floating mb-3 mt-4">
+        <input
+          type="text"
+          class="form-control "
+          id="productName"
+          placeholder="ProductName"
+          oninput="validateName()"
+        />
+        <label for="productName">Product Name</label>
+        <small class="text-danger d-none" id="nameError">Name must be start with capital letter</small>
+      </div>
+      <div class="form-floating mb-3 mt-4">
+        <input
+          type="number"
+          class="form-control "
+          id="productPrice"
+          placeholder="productPrice"
+          oninput="validateprice()"
+        />
+        <label for="productPrice">Product Price</label>
+        <small class="text-danger d-none" id="priceError">price must be From 1000 To 10000</small>
+      </div>
+
+      <div class="form-floating mb-3 mt-4">
+        <input
+          type="text"
+          class="form-control "
+          id="productCategory"
+          placeholder="productCategory"
+          oninput="validateCategory()"
+          list="categories"
+        />
+        <label for="productCategory">Product Category</label>
+        <small class="text-danger d-none" id="CategoryError">Category must be Tv OR Mobile OR Laptop OR Electronics</small>
+        <datalist id="categories">
+          <option value="mobile"></option>
+          <option value="tv"></option>
+          <option value="laptop"></option>
+          <option value="electronics"></option>
+        </datalist>
+      </div>
+      <div class="form-floating mb-3 mt-4">
+        <textarea
+          class="form-control "
+          id="productDescription"
+          placeholder="productDescription"
+          oninput="validateDescription()"
+        ></textarea>
+        <label for="productDescription">Product Description</label>
+        <small class="text-danger d-none" id="DescriptionError">Description must be at least 50 char</small>
+      </div>
+      <div class="form-floating mb-3 mt-4">
+        <input
+          type="file"
+          accept="image/*"
+          class="form-control "
+          id="productImage"
+          placeholder="productImage"
+          required = 'required'
+        />
+        <label for="productImage">Product Image</label>
+      </div>
+
+      <button class="btn btn-outline-primary" onclick="addProduct()" id="addBtn">
+        ADD PRODUCT
+      </button>
+
+      <button class="btn btn-outline-warning d-none" id="updateBtn" onclick="updateProduct()" >
+        UPDATE PRODUCT
+      </button>
+      <div class="my-3">
+        <label for=""></label>
+        <input
+          type="text"
+          name=""
+          oninput="searchProduct()"
+          placeholder="Search ..."
+          id="search"
+          class="form-control  py-3"
+        />
+      </div>
+
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th>index</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Update</th>
+
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="data"></tbody>
+      </table>
+    </div>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>

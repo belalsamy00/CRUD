@@ -1,0 +1,11 @@
+.form-control:focus{
+  box-shadow: none;
+}
+
+table td{
+  vertical-align: middle;
+}
+table img{
+  width: 100px;
+  
+}
